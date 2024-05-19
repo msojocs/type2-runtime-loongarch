@@ -52,6 +52,7 @@ docker run \
     "$image_prefix:3.19" \
     sh <<\EOF
 /source/build.sh
+chown "$OUT_UID" out
 chown "$OUT_UID" out/*
 EOF
 
