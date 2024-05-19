@@ -50,6 +50,9 @@ docker run \
     -v "$PWD":/out \
     -w /out \
     "$image_prefix:3.19" \
-    sh /source/build.sh
+    sh <<\EOF
+/source/build.sh
+chown "$OUT_UID" out/*
+EOF
 
 mv out/runtime-fuse3-loong64 out/runtime-loong64
