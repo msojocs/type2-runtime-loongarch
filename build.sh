@@ -69,4 +69,4 @@ echo -ne 'AI\x02' | dd of=runtime-fuse3 bs=1 count=3 seek=8 conv=notrunc # magic
 cd -
 
 mkdir -p out
-cp src/runtime/runtime-fuse3 "out/runtime-${ARCHITECTURE}"
+cp src/runtime/runtime-fuse3 "out/runtime-fuse3-${ARCHITECTURE}"
