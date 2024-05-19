@@ -59,8 +59,9 @@ jobs:
       env:
         ARCHITECTURE: ${{ matrix.appimage_arch }}
       run: |
-           docker run --rm --privileged loongcr.lcpu.dev/multiarch/archlinux --reset -p yes
-           ./build_loong64.sh
+          which qemu-loongarch64-static
+          docker run --rm --privileged loongcr.lcpu.dev/multiarch/archlinux --reset -p yes
+          ./build_loong64.sh
 
     - name: Sign
       env:
