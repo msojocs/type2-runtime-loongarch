@@ -60,6 +60,7 @@ jobs:
         ARCHITECTURE: ${{ matrix.appimage_arch }}
       run: |
           sudo apt-get -y install qemu-user-static
+          which qemu-arm-static
           which qemu-loongarch64-static
           docker run --rm --privileged loongcr.lcpu.dev/multiarch/archlinux --reset -p yes
           ./build_loong64.sh
