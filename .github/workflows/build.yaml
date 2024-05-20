@@ -54,6 +54,10 @@ jobs:
            sudo apt-get -y install qemu-user-static
            ./chroot_build.sh
 
+    - name: Set up QEMU
+      if: matrix.appimage_arch == 'loong64'
+      uses: docker/setup-qemu-action@v3
+      
     - name: Build Loongarch
       if: matrix.appimage_arch == 'loong64'
       env:
