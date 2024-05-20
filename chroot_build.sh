@@ -55,7 +55,7 @@ elif [ "$ARCHITECTURE" = "loong64" ] ; then
     # export PATH="./tmp/qemu-user-static/usr/bin:$PATH"
     echo "Architecture is loongarch64, hence using qemu-loongarch64-static"
     sudo cp "$(which qemu-loongarch64-static)" miniroot/usr/bin
-    sudo cp build.sh miniroot/build.sh && sudo chroot miniroot qemu-loongarch64-static /bin/sh -ex /build.sh
+    sudo cp build.sh miniroot/build.sh && sudo chroot miniroot qemu-loongarch64-static /bin/sh -ex /build.sh $ARCHITECTURE
 else
     echo "Edit chroot_build.sh to support this architecture as well, it should be easy"
     exit 1

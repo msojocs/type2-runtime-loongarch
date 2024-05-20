@@ -62,11 +62,9 @@ jobs:
       if: matrix.appimage_arch == 'loong64'
       env:
         ARCHITECTURE: ${{ matrix.appimage_arch }}
-        ARCH: ${{ matrix.appimage_arch }}
       run: |
           ./prepare_loong64.sh
           ./chroot_build.sh
-          # ./build_docker.sh
 
     - name: Sign
       env:
