@@ -61,7 +61,8 @@ jobs:
         ARCH: ${{ matrix.appimage_arch }}
       run: |
           ./prepare_loong64.sh
-          ./build_docker.sh
+          ./chroot_build.sh
+          # ./build_docker.sh
 
     - name: Sign
       env:
