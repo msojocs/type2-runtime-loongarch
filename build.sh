@@ -6,7 +6,7 @@ if ! command -v apk; then
 	echo "This script should be run in an Alpine container"
 	exit 1
 fi
-
+uname -m
 apk update
 apk add alpine-sdk util-linux strace file autoconf automake libtool xz
 
