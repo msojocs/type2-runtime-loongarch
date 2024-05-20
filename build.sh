@@ -30,6 +30,7 @@ export CFLAGS="-ffunction-sections -fdata-sections -Os"
 # Build static squashfuse
 apk add zstd-dev zlib-dev zlib-static # fuse3-dev fuse3-static fuse-static fuse-dev
 if [ "$ARCHITECTURE" == "loong64" ];then
+	# only loong64 can install this package, other arch can not install it.
 	apk add --no-cache zstd-static
 fi
 find / -name "libzstd.*" 2>/dev/null || true
